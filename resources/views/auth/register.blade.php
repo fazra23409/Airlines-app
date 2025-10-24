@@ -9,8 +9,8 @@
 <body>
  <div class="container">
         <div class="left-panel">
-            <h1>Manage Your Task</h1>
-            <p>Raih Targetmu!</p>
+            <h1>Travel the world with aviaLink</h1>
+            <p>Get Your Ticket!</p>
         </div>
         
         <div class="right-panel">

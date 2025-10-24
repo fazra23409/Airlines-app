@@ -13,6 +13,10 @@ class Payment extends Model
         'user_id',
         'flight_id',
         'status',
+        'name',
+        'email',
+        'phone',
+        'no_ktp',
     ];
 
     public function user()

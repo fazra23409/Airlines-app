@@ -6,27 +6,7 @@
     <title>Hasil Pencarian - SkyWings</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Poppins', sans-serif; padding: 20px; background: #f9f9f9; }
-        h2 { margin-bottom: 20px; }
-        table { width: 100%; border-collapse: collapse; background: white; }
-        th, td { padding: 12px; border: 1px solid #ddd; text-align: left; }
-        th { background-color: #007bff; color: white; }
-        tr:hover { background-color: #f1f1f1; }
-        .no-results { margin-top: 20px; color: #777; font-size: 18px; }
-        .back-btn { margin-top: 20px; display: inline-block; background: #007bff; color: white; padding: 10px 15px; text-decoration: none; border-radius: 5px; }
-        .back-btn:hover { background: #0056b3; }
-        .buy-btn {
-            background-color: #28a745;
-            color: white;
-            border: none;
-            padding: 8px 12px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .buy-btn:hover { background-color: #218838; }
-    </style>
+    <link rel="stylesheet" href="{{ asset('css/search.css') }}">
 </head>
 <body>
     <h2>Hasil Pencarian Penerbangan</h2>
@@ -58,7 +38,8 @@
                         <form action="{{ route('payments.store') }}" method="POST">
                             @csrf
                             <input type="hidden" name="flight_id" value="{{ $flight->id }}">
-                            <button type="submit" class="buy-btn">Beli</button>
+                            <a href="{{ route('payments.form', $flight->id) }}" class="buy-btn">Beli</a>
+
                         </form>
 
                     </td>

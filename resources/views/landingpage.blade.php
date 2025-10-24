@@ -9,42 +9,35 @@
      <link rel="stylesheet" href="{{ asset('css/landingpage.css') }}">
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="container">
             <nav class="navbar">
                 <a href="#" class="logo">
                    <i class="fas fa-plane"></i>
-                    Soar Airlines
+                    AviaLink
                 </a>
                 <ul class="nav-links">
                     <li><a href="#">Beranda</a></li>
-                    <li><a href="#">Rute</a></li>
-                    <li><a href="#">Promo</a></li>
-                    <li><a href="#">Tentang Kami</a></li>
+                    <li><a href="{{ route('about') }}">Tentang Kami</a></li>
                     <li><a href="{{ route('login') }}" class="btn" style="color: white;">Masuk</a></li>
                 </ul>
             </nav>
         </div>
     </header>
-
-    <!-- Hero Section -->
     <section class="hero">
       
         <div class="container">
-            <h1>Safe Flights with Soar Airlines </h1>
+            <h1>Safe Flights with AviaLink </h1>
             <p style="font-size: 15px; text-align:left; margin-left:10px;">Maskapai penerbangan nasional dengan layanan terbaik dan harga terjangkau. Nikmati pengalaman terbang yang tak terlupakan bersama kami!</p>
             <div class="hero-buttons">
-                <a href="#" class="btn btn-accent"> Pesan Tiket Sekarang</a>
+                <a href="{{ route('login') }}" class="btn btn-accent"> Pesan Tiket Sekarang</a>
                 <a href="#" class="btn" style="background-color: rgba(255,255,255,0.2); backdrop-filter: blur(10px);">Jelajahi Rute</a>
             </div>
         </div>
     </section>
-
-    <!-- Features -->
     <section class="features">
         <div class="container">
-            <h2><i class="bi bi-star-fill"></i> Keunggulan PigeonSky</h2>
+            <h2><i class="bi bi-star-fill"></i> Keunggulan AviaLink</h2>
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">
@@ -77,11 +70,9 @@
             </div>
         </div>
     </section>
-
-    <!-- Routes -->
     <section class="routes">
         <div class="container">
-            <h2><i class="bi bi-airplane-fill"></i> Rute Populer PigeonSky</h2>
+            <h2><i class="bi bi-airplane-fill"></i> Rute Populer AviaLink</h2>
             <div class="routes-grid">
                 <div class="route-card">
                     <div class="route-image" style="background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);">
@@ -91,7 +82,7 @@
                         <h3>Jakarta (CGK) → Denpasar (DPS)</h3>
                         <p>Penerbangan langsung setiap hari dengan berbagai pilihan jam.</p>
                         <div class="route-price">Rp 1.250.000</div>
-                        <a href="#" class="btn btn-accent">Pesan Sekarang</a>
+                        <a href="{{ route('login') }}" class="btn btn-accent">Pesan Sekarang</a>
                     </div>
                 </div>
                 <div class="route-card">
@@ -107,11 +98,11 @@
                 </div>
                 <div class="route-card">
                     <div class="route-image" style="background: linear-gradient(135deg, #3b82f6 0%, #93c5fd 100%);">
-                        <span style="color: white;">Jakarta → Yogyakarta</span>
+                        <span style="color: white;">Jakarta → Pontianak</span>
                     </div>
                     <div class="route-content">
-                        <h3>Jakarta (CGK) → Yogyakarta (YIA)</h3>
-                        <p>Nikmati keindahan budaya Jawa dengan penerbangan langsung.</p>
+                        <h3>Jakarta (CGK) → Pontianak (YIA)</h3>
+                        <p>Nikmati keindahan budaya Kalimantan dengan penerbangan langsung.</p>
                         <div class="route-price">Rp 550.000</div>
                         <a href="#" class="btn btn-accent">Pesan Sekarang</a>
                     </div>
@@ -120,14 +111,13 @@
         </div>
     </section>
 
-    <!-- Testimonials -->
     <section class="testimonials">
         <div class="container">
             <h2>💬 Apa Kata Penumpang Kami</h2>
             <div class="testimonial-grid">
                 <div class="testimonial-card">
                     <div class="testimonial-text">
-                        "Penerbangan dengan PigeonSky selalu menyenangkan. Kru kabin sangat ramah dan makanan yang disajikan lezat. Recommended!"
+                        "Penerbangan dengan AviaLink selalu menyenangkan. Kru kabin sangat ramah dan makanan yang disajikan lezat. Recommended!"
                     </div>
                     <div class="testimonial-author">
                         <div class="author-avatar">AS</div>
@@ -139,7 +129,7 @@
                 </div>
                 <div class="testimonial-card">
                     <div class="testimonial-text">
-                        "Sebagai pebisnis yang sering terbang, saya sangat menghargai ketepatan waktu dan kenyamanan yang ditawarkan PigeonSky."
+                        "Sebagai pebisnis yang sering terbang, saya sangat menghargai ketepatan waktu dan kenyamanan yang ditawarkan AviaLink."
                     </div>
                     <div class="testimonial-author">
                         <div class="author-avatar">DM</div>
@@ -151,7 +141,7 @@
                 </div>
                 <div class="testimonial-card">
                     <div class="testimonial-text">
-                        "Pengalaman pertama anak saya naik pesawat dengan PigeonSky sangat menyenangkan. Kru sangat perhatian kepada penumpang anak-anak."
+                        "Pengalaman pertama anak saya naik pesawat dengan AviaLink sangat menyenangkan. Kru sangat perhatian kepada penumpang anak-anak."
                     </div>
                     <div class="testimonial-author">
                         <div class="author-avatar">RS</div>
@@ -165,24 +155,20 @@
         </div>
     </section>
 
-    <!-- CTA -->
     <section class="cta">
         <div class="container">
-            <h2>🚀 Siap Terbang dengan PigeonSky?</h2>
-            <p>Daftar sekarang untuk mendapatkan penawaran khusus dan notifikasi promo terbaru.</p>
+            <h2><i class="bi bi-airplane-fill"></i> Siap Terbang dengan AviaLink?</h2>
             <div class="hero-buttons">
                 <a href="#" class="btn btn-accent">Masuk & Pesan Tiket</a>
                 <a href="#" class="btn" style="background-color: white; color: var(--primary);">Lihat Semua Rute</a>
             </div>
         </div>
     </section>
-
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>PigeonSky</h3>
+                    <h3>AviaLink</h3>
                     <p>Maskapai penerbangan nasional dengan komitmen memberikan pengalaman terbang terbaik untuk penumpang.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -213,13 +199,13 @@
                     <h3>Kontak</h3>
                     <ul class="footer-links">
                         <li><i class="fas fa-phone"></i> 1500-123</li>
-                        <li><i class="fas fa-envelope"></i> info@pigeonsky.com</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Jl. Merpati No. 15, Jakarta</li>
+                        <li><i class="fas fa-envelope"></i> info@avialink.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Jl. xxxx.Tapos, Depok</li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 PigeonSky. All rights reserved.</p>
+                <p>&copy; 2023 AviaLink. All rights reserved.</p>
             </div>
         </div>
     </footer>

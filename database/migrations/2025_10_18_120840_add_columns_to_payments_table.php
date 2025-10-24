@@ -6,20 +6,27 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+    /**
+     * Run the migrations.
+     */
     public function up(): void
     {
         Schema::table('payments', function (Blueprint $table) {
             $table->string('name')->nullable();
             $table->string('email')->nullable();
             $table->string('phone')->nullable();
-            $table->string('no_ktp')->nullable();
+            $table->string('no_ktp')->nullable(); 
+
         });
     }
 
+    /**
+     * Reverse the migrations.
+     */
     public function down(): void
     {
         Schema::table('payments', function (Blueprint $table) {
-            $table->dropColumn(['name', 'email', 'phone', 'no_ktp']);
+             $table->dropColumn(['name', 'email', 'phone', 'no_ktp']);
         });
     }
 };

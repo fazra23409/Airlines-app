@@ -10,7 +10,7 @@
      <div class="container">
         <div class="left-panel">
             <div class="left-panel-content">
-                <h1>Welcome to skywings</h1>
+                <h1>Welcome to aviaLink</h1>
                 <p>Get Your ticket now!</p>
               
             </div>

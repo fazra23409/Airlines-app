@@ -29,7 +29,7 @@ class AuthController extends Controller
             'role' => 'user', 
         ]);
 
-        return redirect('/login')->with('success', 'Registrasi berhasil! Silakan login.');
+        return redirect('/home')->with('success', 'Registrasi berhasil! Silakan login.');
     }
     public function login()
     {

@@ -10,21 +10,17 @@
 </head>
 <body>
 <div class="admin-container">
-    <!-- Sidebar -->
     <div class="sidebar">
         <div class="sidebar-header">
-            <h3><i class="fas fa-plane"></i> SkyAdmin</h3>
+            <h3><i class="fas fa-plane"></i> AviaAdmin</h3>
         </div>
         <ul class="sidebar-menu">
             <li><a href="#" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
-            <li><a href="#"><i class="fas fa-users"></i> Users</a></li>
             <li><a href="/admin/flights"><i class="fas fa-plane-departure"></i> Flights</a></li>
 
             <li><a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
         </ul>
     </div>
-
-    <!-- Main Content -->
     <div class="main-content">
         <div class="header">
             <h1>Transaction Management</h1>
@@ -33,8 +29,6 @@
                 <span>{{ Auth::user()->name }}</span>
             </div>
         </div>
-
-        <!-- Dashboard Stats -->
         <div class="dashboard-stats">
             <div class="stat-card">
                 <div class="stat-icon" style="background-color: #e3f2fd; color: var(--primary-color);">
@@ -64,8 +58,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- Transactions Table -->
         <div class="card">
             <div class="card-header">
                 <h3><i class="fas fa-list"></i> User Transactions</h3>
