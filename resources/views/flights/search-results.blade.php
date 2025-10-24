@@ -9,51 +9,87 @@
     <link rel="stylesheet" href="{{ asset('css/search.css') }}">
 </head>
 <body>
-    <h2>Hasil Pencarian Penerbangan</h2>
-    <p>Dari <b>{{ $from }}</b> ke <b>{{ $to }}</b> — Tanggal: <b>{{ $departure }}</b></p>
-
-    @if ($flights->count() > 0)
-        <table>
-            <thead>
-                <tr>
-                    <th>No</th>
-                    <th>Nomor Penerbangan</th>
-                    <th>Kota Asal</th>
-                    <th>Kota Tujuan</th>
-                    <th>Waktu Berangkat</th>
-                    <th>Harga</th>
-                    <th>Aksi</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($flights as $index => $flight)
-                <tr>
-                    <td>{{ $index + 1 }}</td>
-                    <td>{{ $flight->flight_number }}</td>
-                    <td>{{ $flight->kota_asal }}</td>
-                    <td>{{ $flight->kota_tujuan }}</td>
-                    <td>{{ $flight->departure_time }}</td>
-                    <td>Rp {{ number_format($flight->price, 0, ',', '.') }}</td>
-                    <td>
-                        <form action="{{ route('payments.store') }}" method="POST">
-                            @csrf
-                            <input type="hidden" name="flight_id" value="{{ $flight->id }}">
-                            <a href="{{ route('payments.form', $flight->id) }}" class="buy-btn">Beli</a>
-
-                        </form>
-
-                    </td>
-                </tr>
-                @endforeach
-            </tbody>
-        </table>
-    @else
-        <div class="no-results">
-            Tidak ada penerbangan yang cocok dengan pencarian Anda.
+    <div class="container">
+        <div class="search-header">
+            <div>
+                <h1 class="search-title">Hasil Pencarian Penerbangan</h1>
+                <p class="search-info">Dari <b>{{ $from }}</b> ke <b>{{ $to }}</b> — Tanggal: <b>{{ $departure }}</b></p>
+            </div>
+            <div class="results-count">{{ $flights->count() }} Penerbangan Ditemukan</div>
         </div>
-    @endif
 
-    <a href="{{ route('home') }}" class="back-btn">⬅ Kembali ke Beranda</a>
-     
+        @if ($flights->count() > 0)
+            <div class="flight-results">
+                @foreach ($flights as $index => $flight)
+                <div class="flight-card">
+                    <div class="flight-header">
+                        <div class="flight-number">{{ $flight->flight_number }}</div>
+                        <div class="flight-price">Rp {{ number_format($flight->price, 0, ',', '.') }}</div>
+                    </div>
+                    
+                    <div class="flight-body">
+                        <div class="route-info">
+                            <div class="city">{{ $flight->kota_asal }}</div>
+                            <div class="airport">Bandara {{ $flight->kota_asal }}</div>
+                        </div>
+                        
+                        <div class="flight-path">
+                            <div class="path-dot"></div>
+                            <div class="path-line"></div>
+                            <div class="path-plane"><i class="fas fa-plane"></i></div>
+                            <div class="path-line"></div>
+                            <div class="path-dot"></div>
+                        </div>
+                        
+                        <div class="route-info">
+                            <div class="city">{{ $flight->kota_tujuan }}</div>
+                            <div class="airport">Bandara {{ $flight->kota_tujuan }}</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flight-time">
+                        {{ $flight->departure_time }}
+                    </div>
+                    
+                    <div class="flight-duration">
+                        Perkiraan durasi: 2 jam 15 menit
+                    </div>
+                    
+                    <div class="flight-footer">
+                        <div class="flight-details">
+                            <i class="fas fa-suitcase"></i> 20kg Bagasi • <i class="fas fa-utensils"></i> Makanan Termasuk
+                        </div>
+                        <div class="flight-actions">
+                            <form action="{{ route('payments.store') }}" method="POST" style="display: inline;">
+                                @csrf
+                                <input type="hidden" name="flight_id" value="{{ $flight->id }}">
+                                <a href="{{ route('payments.form', $flight->id) }}" class="buy-btn">
+                                    <i class="fas fa-shopping-cart"></i> Beli Tiket
+                                </a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        @else
+            <div class="no-results">
+                <div class="no-results-icon">
+                    <i class="fas fa-plane-slash"></i>
+                </div>
+                <h3>Tidak Ada Penerbangan yang Ditemukan</h3>
+                <p>Maaf, tidak ada penerbangan yang cocok dengan kriteria pencarian Anda.</p>
+                <a href="{{ route('home') }}" class="back-btn">
+                    <i class="fas fa-arrow-left"></i> Kembali ke Beranda
+                </a>
+            </div>
+        @endif
+
+        @if ($flights->count() > 0)
+            <a href="{{ route('home') }}" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Kembali ke Beranda
+            </a>
+        @endif
+    </div>
 </body>
 </html>

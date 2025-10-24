@@ -10,6 +10,9 @@ class ProfileController extends Controller
 {
     public function show()
     {
+         if (Auth::user()->role === 'admin') {
+            return redirect('/admin/dashboard')->with('info', 'Silakan gunakan dashboard admin.');
+        }
         $user = Auth::user();
         return view('profile', [
             'title' => 'Profile',
@@ -18,6 +21,9 @@ class ProfileController extends Controller
     }
     public function update(Request $request)
     {
+         if (Auth::user()->role === 'admin') {
+            return redirect('/admin/dashboard')->with('info', 'Silakan gunakan dashboard admin.');
+        }
         $user = Auth::user();
 
         $request->validate([

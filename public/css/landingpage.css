@@ -182,8 +182,6 @@
         .btn-accent {
             background: linear-gradient(135deg, var(--secondary), var(--accent));
         }
-
-        /* Header */
         header {
             background-color: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
@@ -355,7 +353,6 @@
             color: var(--secondary);
         }
 
-        /* Routes */
         .routes {
             background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
         }
@@ -432,7 +429,6 @@
             animation: pulse 2s ease-in-out infinite;
         }
 
-        /* Testimonials */
         .testimonials {
             background-color: white;
         }
@@ -492,7 +488,6 @@
             align-items: center;
         }
 
-        /* CTA */
         .cta {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
@@ -526,7 +521,6 @@
             z-index: 1;
         }
 
-        /* Footer */
         footer {
             background: linear-gradient(135deg, var(--dark) 0%, #1a1a2e 100%);
             color: white;
@@ -609,7 +603,6 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;

@@ -10,72 +10,102 @@
 </head>
 <body>
     <div class="container">
-        <header>
-            <h2><i class="fas fa-history"></i> Riwayat Transaksi</h2>
-        </header>
-
-        @if($payments->count() > 0)
-        <div class="card">
-            <div class="card-header">
-                <i class="fas fa-receipt"></i> Daftar Penerbangan
+        <div class="page-header">
+            <div class="page-title">
+                <i class="fas fa-history"></i>
+                <div>
+                    <h1>Riwayat Transaksi</h1>
+                    <p>Kelola dan lacak semua tiket penerbangan Anda</p>
+                </div>
             </div>
-            <div class="card-body">
-                <div class="responsive-table">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>No</th>
-                                <th>Nomor Penerbangan</th>
-                                <th>Kota Asal</th>
-                                <th>Kota Tujuan</th>
-                                <th>Waktu Berangkat</th>
-                                <th>Harga</th>
-                                <th>Status</th>
-                                <th>Tiket</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach($payments as $index => $payment)
-                            <tr>
-                                <td>{{ $index + 1 }}</td>
-                                <td class="flight-number">{{ $payment->flight->flight_number }}</td>
-                                <td>{{ $payment->flight->kota_asal }}</td>
-                                <td>{{ $payment->flight->kota_tujuan }}</td>
-                                <td>{{ $payment->flight->departure_time }}</td>
-                                <td class="price">Rp {{ number_format($payment->flight->price, 0, ',', '.') }}</td>
-                                <td>
-                                    <span class="status status-{{ $payment->status }}">
-                                        {{ ucfirst($payment->status) }}
-                                    </span>
-                                </td>
-                                <td>
-                                    @if($payment->status === 'approved')
-                                    <a href="{{ route('payments.ticket', $payment->id) }}" 
-                                       class="btn btn-primary">
-                                        <i class="fas fa-ticket-alt"></i> Lihat Tiket
-                                    </a>
-                                    @else
-                                    <span style="color: var(--gray);">
-                                        <i class="fas fa-clock"></i> Belum tersedia
-                                    </span>
-                                    @endif
-                                </td>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+            
+            <div class="stats-card">
+                <div class="stats-icon primary">
+                    <i class="fas fa-receipt"></i>
+                </div>
+                <div class="stats-content">
+                    <h3>{{ $payments->count() }}</h3>
+                    <p>Total Transaksi</p>
                 </div>
             </div>
         </div>
-        @else
-        <div class="card">
-            <div class="empty-state">
-                <i class="fas fa-inbox"></i>
-                <p>Tidak ada riwayat transaksi.</p>
-                <a href="{{ route('home') }}" class="btn btn-outline">
-                    <i class="fas fa-plus"></i> Pesan Tiket Sekarang
-                </a>
+
+        @if($payments->count() > 0)
+        <div class="transactions-grid">
+            @foreach($payments as $index => $payment)
+            <div class="transaction-card">
+                <div class="transaction-header">
+                    <div class="flight-info">
+                        <div class="flight-icon">
+                            <i class="fas fa-plane"></i>
+                        </div>
+                        <div class="flight-details">
+                            <h3>{{ $payment->flight->flight_number }}</h3>
+                            <p>Booking ID: #{{ str_pad($payment->id, 6, '0', STR_PAD_LEFT) }}</p>
+                        </div>
+                    </div>
+                    <div class="transaction-price">
+                        <div class="price">Rp {{ number_format($payment->flight->price, 0, ',', '.') }}</div>
+                        <div class="date">{{ \Carbon\Carbon::parse($payment->created_at)->format('d M Y') }}</div>
+                    </div>
+                </div>
+                
+                <div class="transaction-body">
+                    <div class="route-info">
+                        <div class="route">
+                            <span class="city">{{ $payment->flight->kota_asal }}</span>
+                            <span class="airport">Bandara {{ $payment->flight->kota_asal }}</span>
+                        </div>
+                        <div class="route-path">
+                            <div class="path-line"></div>
+                            <i class="fas fa-plane"></i>
+                            <div class="path-line"></div>
+                        </div>
+                        <div class="route">
+                            <span class="city">{{ $payment->flight->kota_tujuan }}</span>
+                            <span class="airport">Bandara {{ $payment->flight->kota_tujuan }}</span>
+                        </div>
+                    </div>
+                    
+                    <div class="departure-time">
+                        <div class="time">{{ $payment->flight->departure_time }}</div>
+                        <div class="duration">Waktu Berangkat</div>
+                    </div>
+                    
+                    <div class="status-section">
+                        <div class="status-badge status-{{ $payment->status }}">
+                            {{ ucfirst($payment->status) }}
+                        </div>
+                    </div>
+                    
+                    <div class="transaction-actions">
+                        @if($payment->status === 'approved')
+                        <a href="{{ route('payments.ticket', $payment->id) }}" class="btn btn-primary">
+                            <i class="fas fa-ticket-alt"></i> Lihat Tiket
+                        </a>
+                        @else
+                        <span class="btn btn-disabled">
+                            <i class="fas fa-clock"></i> Menunggu
+                        </span>
+                        @endif
+                        <a href="#" class="btn btn-outline">
+                            <i class="fas fa-info-circle"></i> Detail
+                        </a>
+                    </div>
+                </div>
             </div>
+            @endforeach
+        </div>
+        @else
+        <div class="empty-state">
+            <div class="empty-icon">
+                <i class="fas fa-inbox"></i>
+            </div>
+            <h3>Tidak Ada Riwayat Transaksi</h3>
+            <p>Belum ada tiket penerbangan yang Anda pesan. Mulai jelajahi destinasi impian Anda sekarang!</p>
+            <a href="{{ route('home') }}" class="btn btn-primary">
+                <i class="fas fa-plus"></i> Pesan Tiket Sekarang
+            </a>
         </div>
         @endif
 

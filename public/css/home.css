@@ -219,11 +219,9 @@
         body.sidebar-open {
             overflow: hidden;
         }
-        
-        /* Hero Section */
         .hero {
             background: linear-gradient(rgba(30, 64, 175, 0.8), rgba(30, 58, 138, 0.9)), 
-                        url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80') no-repeat center center;
+                        url('/image/bg(1).jpg') no-repeat center center;
             background-size: cover;
             color: var(--white);
             padding: 150px 0 100px;
@@ -242,8 +240,6 @@
             margin: 0 auto 2rem;
             opacity: 0.9;
         }
-        
-        /* Search Section */
         .search-section {
             background-color: var(--white);
             padding: 40px 5%;
@@ -323,8 +319,6 @@
             background: var(--dark-blue);
             transform: translateY(-2px);
         }
-        
-        /* Popular Routes */
         .popular-routes {
             padding: 80px 5%;
         }
@@ -406,51 +400,8 @@
             background: var(--dark-blue);
         }
         
-        /* Promo Section */
-        .promo-section {
-            padding: 80px 5%;
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
-            color: var(--white);
-            text-align: center;
-        }
+       
         
-        .promo-section .section-title {
-            color: var(--white);
-        }
-        
-        .promo-card {
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            padding: 30px;
-            max-width: 600px;
-            margin: 0 auto;
-            backdrop-filter: blur(10px);
-        }
-        
-        .promo-code {
-            font-size: 2rem;
-            font-weight: 700;
-            margin: 20px 0;
-            letter-spacing: 3px;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            padding: 12px 30px;
-            background: var(--white);
-            color: var(--primary-blue);
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            margin-top: 20px;
-            transition: transform 0.3s;
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-3px);
-        }
-        
-        /* Footer */
         footer {
             background-color: var(--text-dark);
             color: var(--white);

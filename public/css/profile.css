@@ -25,7 +25,6 @@
             min-height: 100vh;
         }
 
-        /* Header & Navigation */
         header {
             background-color: var(--white);
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -82,7 +81,6 @@
             background-color: var(--primary-blue);
         }
 
-        /* Profile Section */
         .profile-section {
             max-width: 800px;
             margin: 3rem auto;
@@ -149,8 +147,6 @@
         .profile-info p {
             color: var(--text-gray);
         }
-
-        /* Form Styles */
         .form-group {
             margin-bottom: 1.5rem;
         }
@@ -203,7 +199,6 @@
             box-shadow: 0 5px 15px rgba(26, 75, 140, 0.3);
         }
 
-        /* Alert Styles */
         .alert-success {
             background-color: rgba(40, 167, 69, 0.1);
             color: var(--success-green);
@@ -220,8 +215,6 @@
             margin-right: 0.5rem;
             font-weight: bold;
         }
-
-        /* Responsive Design */
         @media (max-width: 768px) {
             .navbar {
                 flex-direction: column;

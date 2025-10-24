@@ -39,7 +39,7 @@ class PaymentController extends Controller
             'no_ktp' => $request->no_ktp,
         ]);
 
-        return redirect('/payments/history')->with('success', 'Transaksi berhasil disimpan. Menunggu persetujuan admin.');
+        return redirect('/riwayat')->with('success', 'Transaksi berhasil disimpan. Menunggu persetujuan admin.');
     }
     public function history()
     {

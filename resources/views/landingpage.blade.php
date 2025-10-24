@@ -70,46 +70,7 @@
             </div>
         </div>
     </section>
-    <section class="routes">
-        <div class="container">
-            <h2><i class="bi bi-airplane-fill"></i> Rute Populer AviaLink</h2>
-            <div class="routes-grid">
-                <div class="route-card">
-                    <div class="route-image" style="background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);">
-                        <span style="color: white;">Jakarta → Bali</span>
-                    </div>
-                    <div class="route-content">
-                        <h3>Jakarta (CGK) → Denpasar (DPS)</h3>
-                        <p>Penerbangan langsung setiap hari dengan berbagai pilihan jam.</p>
-                        <div class="route-price">Rp 1.250.000</div>
-                        <a href="{{ route('login') }}" class="btn btn-accent">Pesan Sekarang</a>
-                    </div>
-                </div>
-                <div class="route-card">
-                    <div class="route-image" style="background: linear-gradient(135deg, #2563eb 0%, #60a5fa 100%);">
-                        <span style="color: white;">Jakarta → Surabaya</span>
-                    </div>
-                    <div class="route-content">
-                        <h3>Jakarta (CGK) → Surabaya (SUB)</h3>
-                        <p>Penerbangan cepat dengan frekuensi tinggi sepanjang hari.</p>
-                        <div class="route-price">Rp 650.000</div>
-                        <a href="#" class="btn btn-accent">Pesan Sekarang</a>
-                    </div>
-                </div>
-                <div class="route-card">
-                    <div class="route-image" style="background: linear-gradient(135deg, #3b82f6 0%, #93c5fd 100%);">
-                        <span style="color: white;">Jakarta → Pontianak</span>
-                    </div>
-                    <div class="route-content">
-                        <h3>Jakarta (CGK) → Pontianak (YIA)</h3>
-                        <p>Nikmati keindahan budaya Kalimantan dengan penerbangan langsung.</p>
-                        <div class="route-price">Rp 550.000</div>
-                        <a href="#" class="btn btn-accent">Pesan Sekarang</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    
 
     <section class="testimonials">
         <div class="container">
