@@ -24,8 +24,6 @@
             color: var(--text-dark);
             line-height: 1.6;
         }
-        
-        /* Header */
         header {
             background-color: var(--white);
             box-shadow: var(--shadow);
@@ -124,7 +122,6 @@
             cursor: pointer;
         }
         
-        /* Sidebar */
         .sidebar {
             position: fixed;
             top: 0;
@@ -478,7 +475,6 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
         
-        /* Responsive */
         @media (max-width: 768px) {
             .nav-links, .user-menu {
                 display: none;

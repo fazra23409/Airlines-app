@@ -9,8 +9,8 @@ use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProfileController;
 
 
-Route::get('/', fn() => view('landingpage'));
-Route::get('/about', fn() => view('about'))->name('about');
+Route::view('/', 'landingpage')->name('landingpage');
+Route::view('/about', 'about')->name('about');
 
 Route::get('/register', [AuthController::class, 'register'])->name('register');
 Route::post('/register', [AuthController::class, 'create'])->name('register.post');
